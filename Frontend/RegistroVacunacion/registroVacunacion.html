@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styleRegVac.css" />
+  <title>Registro de Vacunación</title>
+</head>
+<header>
+  <div class="frame-8">
+    <img class="image-3" src="images/image-31.png" />
+
+    <div class="frame-299">
+      <a href="/logout" class="salir-boton">
+        <div class="frame-297">
+          <div class="frame-295">
+            <img class="frame" src="vectores/fram0.svg" />
+          </div>
+          <div class="salir">Salir</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="frame-378">
+    <div class="registro-de-vacunaci-n-campa-a-zona-norte">
+      <span>
+        <span class="registro-de-vacunaci-n-campa-a-zona-norte-span">Registro de </span>
+        <span class="registro-de-vacunaci-n-campa-a-zona-norte-span2">vacunación<br /></span>
+        <span class="registro-de-vacunaci-n-campa-a-zona-norte-span3">Campaña zona norte</span>
+      </span>
+    </div>
+
+    <form action="/registrar" method="POST" class="frame-379">
+      <div class="email">
+        <div class="frame-243">
+          <div class="label">Tipo de animal vacunado</div>
+        </div>
+        <div class="text-field">
+<<<<<<< HEAD:Frontend/Vacunadores/registroVacunacion.html
+          <div class="inputs">
+            <div class="bovino">Bovino</div>
+          </div>
+          <img class="frame" src="svg/frame0.svg" />
+=======
+          <select name="tipo_animal" required>
+            <option value="">Seleccione</option>
+            <option value="Bovino">Bovino</option>
+            <option value="Porcino">Porcino</option>
+          </select>
+>>>>>>> RegistroVac-Forms:Frontend/registroVacunacion.html
+        </div>
+      </div>
+      <div class="email">
+        <div class="frame-243">
+          <div class="label">Número de animales vacunados</div>
+        </div>
+        <div class="text-field2">
+          <input type="number" name="cantidad" min="1" required />
+        </div>
+      </div>
+      <div class="email">
+        <div class="frame-243">
+          <div class="label">Nombre de la finca</div>
+        </div>
+        <div class="text-field2">
+          <input type="text" name="finca" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,}" />
+        </div>
+      </div>
+      <div class="email">
+        <div class="frame-243">
+          <div class="label">Municipio</div>
+        </div>
+        <div class="text-field2">
+          <input type="text" name="municipio" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,}" />
+        </div>
+      </div>
+      <div class="email2">
+        <div class="frame-243">
+          <div class="label">Región</div>
+        </div>
+        <div class="text-field">
+<<<<<<< HEAD:Frontend/Vacunadores/registroVacunacion.html
+          <div class="inputs">
+            <div class="caribe">Caribe</div>
+          </div>
+          <img class="frame2" src="svg/frame1.svg" />
+=======
+          <select name="region" required>
+            <option value="">Seleccione</option>
+            <option value="Caribe">Caribe</option>
+            <option value="Andina">Andina</option>
+            <option value="Pacífica">Pacífica</option>
+            <option value="Orinoquía">Orinoquía</option>
+            <option value="Amazonía">Amazonía</option>
+          </select>
+>>>>>>> RegistroVac-Forms:Frontend/registroVacunacion.html
+        </div>
+      </div>
+      <div class="button">
+        <div class="frame-276">
+          <button type="submit" class="sign-up">Registrar vacunación</button>
+        </div>
+      </div>
+<<<<<<< HEAD:Frontend/Vacunadores/registroVacunacion.html
+    </div>
+    <img class="frame3" src="svg/frame2.svg" />
+=======
+    </form>
+>>>>>>> RegistroVac-Forms:Frontend/registroVacunacion.html
+  </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+.frame-8 {
+  background: #ffffff;
+  border-radius: 0px 0px 40px 40px;
+  box-sizing: border-box;
+  padding: 10px 50px 10px 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  height: 143px;
+  position: relative;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.image-3 {
+  flex-shrink: 0;
+  width: 259px;
+  height: 51px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 259/51;
+}
+.frame-299 {
+  background: rgba(255, 255, 255, 0);
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.frame-297 {
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.frame-295 {
+  background: rgba(121, 181, 27, 0.9);
+  border-radius: 50px;
+  border-style: solid;
+  border-color: rgba(74, 110, 17, 0.8);
+  border-width: 1px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.frame {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.salir {
+  color: #1e1e1e;
+  text-align: center;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+}
+menu, ol, ul {
+  list-style: none;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.frame-378,
+.frame-378 * {
+  box-sizing: border-box;
+}
+.frame-378 {
+  background: #ffffff;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* TÍTULO */
+.registro-de-vacunaci-n-campa-a-zona-norte {
+  text-align: center;
+}
+.registro-de-vacunaci-n-campa-a-zona-norte-span {
+  color: #000;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 64px;
+  line-height: 41px;
+  font-weight: 700;
+}
+.registro-de-vacunaci-n-campa-a-zona-norte-span2 {
+  color: #79b51b;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 64px;
+  line-height: 41px;
+  font-weight: 700;
+}
+.registro-de-vacunaci-n-campa-a-zona-norte-span3 {
+  color: #696969;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 24px;
+  line-height: 41px;
+  font-weight: 700;
+}
+
+/* FORMULARIO */
+.frame-379 {
+  background: #ffffff;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 868px;
+  overflow: hidden;
+}
+
+/* CADA CAMPO */
+.email, .email2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 105px;
+  width: 100%;
+}
+.frame-243 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.label {
+  color: #303030;
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* CAMPOS DE ENTRADA Y SELECT */
+.text-field,
+.text-field2 {
+  border-radius: 12px;
+  border: 1px solid rgba(102, 102, 102, 0.35);
+  padding: 15px 24px;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* INPUT Y SELECT INTERNOS */
+.text-field input,
+.text-field select,
+.text-field2 input,
+.text-field2 select {
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  font-family: "NunitoSans-Regular", sans-serif;
+  color: #000;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+/* FLECHA NATIVA PARA SELECT */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 24px;
+  padding-right: 40px;
+}
+
+/* BOTÓN */
+.button {
+  background: #79b51b;
+  border-radius: 32px;
+  width: 100%;
+  height: 56px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.frame-276 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.sign-up {
+  color: #ffffff;
+  text-align: center;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  background: none;
+  cursor: pointer;
+}
