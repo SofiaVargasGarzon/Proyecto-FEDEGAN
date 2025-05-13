@@ -1,0 +1,588 @@
+.brotes,
+.brotes * {
+  box-sizing: border-box;
+}
+.brotes {
+  background: #ffffff;
+  padding: 50px 30px 50px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  height: 1117px;
+  position: relative;
+  overflow-y: auto;
+}
+.brotes-de-fiebre-aftosa {
+  text-align: center;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  position: relative;
+  width: 1203px;
+}
+.brotes-de-fiebre-aftosa-span {
+  color: #000000;
+}
+.brotes-de-fiebre-aftosa-span2 {
+  color: #79b51b;
+}
+.frame-2881 {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.frame-2882 {
+  border-radius: 20px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  padding: 50px 10px 50px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 321px;
+  height: 229px;
+  position: relative;
+  overflow: hidden;
+}
+._1 {
+  color: rgba(83, 145, 0, 0.9);
+  text-align: center;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  position: relative;
+}
+.casos-totales {
+  color: #000000;
+  text-align: center;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-2883 {
+  border-radius: 20px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  padding: 50px 10px 50px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 321px;
+  height: 229px;
+  position: relative;
+  overflow: hidden;
+}
+._5 {
+  color: rgba(83, 145, 0, 0.9);
+  text-align: center;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  position: relative;
+}
+.casos-recientes {
+  color: #000000;
+  text-align: center;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-2884 {
+  border-radius: 20px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  padding: 50px 10px 50px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 321px;
+  height: 229px;
+  position: relative;
+  overflow: hidden;
+}
+._0 {
+  color: rgba(83, 145, 0, 0.9);
+  text-align: center;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  position: relative;
+}
+.zonas-en-riesgo {
+  color: #000000;
+  text-align: center;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-2885 {
+  border-radius: 20px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  padding: 50px 10px 50px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 321px;
+  height: 229px;
+  position: relative;
+  overflow: hidden;
+}
+._90 {
+  color: rgba(83, 145, 0, 0.9);
+  text-align: center;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  position: relative;
+}
+.animales-vacunados {
+  color: #000000;
+  text-align: center;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+}
+.chart-9 {
+  flex-shrink: 0;
+  width: 1313px;
+  height: 336.01px;
+  position: static;
+}
+.container {
+  background: var(--neutral-colors-white, #ffffff);
+  border-radius: 20px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  width: 1312.87px;
+  height: 336.01px;
+  position: absolute;
+  left: 33.13px;
+  top: 426px;
+}
+.time {
+  width: 1143.66px;
+  height: 13.11px;
+  position: static;
+}
+._10-00 {
+  color: var(--neutral-colors-text-gray, #615e83);
+  text-align: center;
+  font-family: var(
+    --text-single-uppercase-200-regular-font-family,
+    "Inter-Regular",
+    sans-serif
+  );
+  font-size: var(--text-single-uppercase-200-regular-font-size, 14px);
+  line-height: var(--text-single-uppercase-200-regular-line-height, 16px);
+  letter-spacing: var(
+    --text-single-uppercase-200-regular-letter-spacing,
+    0.06em
+  );
+  font-weight: var(--text-single-uppercase-200-regular-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 118.31px;
+  top: 722.67px;
+  width: 102.97px;
+  height: 13.11px;
+}
+._12-00 {
+  color: var(--neutral-colors-text-gray, #615e83);
+  text-align: center;
+  font-family: var(
+    --text-single-uppercase-200-regular-font-family,
+    "Inter-Regular",
+    sans-serif
+  );
+  font-size: var(--text-single-uppercase-200-regular-font-size, 14px);
+  line-height: var(--text-single-uppercase-200-regular-line-height, 16px);
+  letter-spacing: var(
+    --text-single-uppercase-200-regular-letter-spacing,
+    0.06em
+  );
+  font-weight: var(--text-single-uppercase-200-regular-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 377.84px;
+  top: 722.67px;
+  width: 102.97px;
+  height: 13.11px;
+}
+._14-00 {
+  color: var(--neutral-colors-text-gray, #615e83);
+  text-align: center;
+  font-family: var(
+    --text-single-uppercase-200-regular-font-family,
+    "Inter-Regular",
+    sans-serif
+  );
+  font-size: var(--text-single-uppercase-200-regular-font-size, 14px);
+  line-height: var(--text-single-uppercase-200-regular-line-height, 16px);
+  letter-spacing: var(
+    --text-single-uppercase-200-regular-letter-spacing,
+    0.06em
+  );
+  font-weight: var(--text-single-uppercase-200-regular-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 637.36px;
+  top: 722.67px;
+  width: 105.54px;
+  height: 13.11px;
+}
+._16-00 {
+  color: var(--neutral-colors-text-gray, #615e83);
+  text-align: center;
+  font-family: var(
+    --text-single-uppercase-200-regular-font-family,
+    "Inter-Regular",
+    sans-serif
+  );
+  font-size: var(--text-single-uppercase-200-regular-font-size, 14px);
+  line-height: var(--text-single-uppercase-200-regular-line-height, 16px);
+  letter-spacing: var(
+    --text-single-uppercase-200-regular-letter-spacing,
+    0.06em
+  );
+  font-weight: var(--text-single-uppercase-200-regular-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 899.47px;
+  top: 722.67px;
+  width: 102.97px;
+  height: 13.11px;
+}
+._18-00 {
+  color: var(--neutral-colors-text-gray, #615e83);
+  text-align: center;
+  font-family: var(
+    --text-single-uppercase-200-regular-font-family,
+    "Inter-Regular",
+    sans-serif
+  );
+  font-size: var(--text-single-uppercase-200-regular-font-size, 14px);
+  line-height: var(--text-single-uppercase-200-regular-line-height, 16px);
+  letter-spacing: var(
+    --text-single-uppercase-200-regular-letter-spacing,
+    0.06em
+  );
+  font-weight: var(--text-single-uppercase-200-regular-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 1158.99px;
+  top: 722.67px;
+  width: 102.97px;
+  height: 13.11px;
+}
+.chart-lines {
+  width: 568.39px;
+  height: 190.13px;
+  position: absolute;
+  left: 405.37px;
+  top: 512.87px;
+  overflow: visible;
+}
+.chart-flow {
+  width: 1313px;
+  height: 208.12px;
+  position: absolute;
+  left: 33px;
+  top: 553.89px;
+  overflow: visible;
+}
+.active-line-elements {
+  width: 30px;
+  height: 107px;
+  position: absolute;
+  left: 466px;
+  top: 596px;
+  overflow: visible;
+}
+.hover-stat {
+  width: 71.49px;
+  height: 41.05px;
+  position: static;
+}
+.container2 {
+  border-radius: 0px;
+  width: 41.05px;
+  height: 71.49px;
+  position: absolute;
+  left: 516.73px;
+  top: 555.01px;
+  overflow: visible;
+}
+.number {
+  color: var(--neutral-colors-black, #1e1b39);
+  text-align: center;
+  font-family: var(
+    --text-single-300-medium-font-family,
+    "Inter-Medium",
+    sans-serif
+  );
+  font-size: var(--text-single-300-medium-font-size, 16px);
+  line-height: var(--text-single-300-medium-line-height, 18px);
+  font-weight: var(--text-single-300-medium-font-weight, 500);
+  position: absolute;
+  left: 465.03px;
+  top: 564.84px;
+  width: 31.92px;
+  height: 14.75px;
+}
+.divider {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: var(--neutral-colors-500, #e5e5ef);
+  border-width: 1px 0 0 0;
+  width: 1267px;
+  height: 0px;
+  position: absolute;
+  left: 62px;
+  top: 513px;
+  transform-origin: 0 0;
+  transform: rotate(-0.006deg) scale(1, 1);
+}
+.card-info {
+  width: 271px;
+  height: 28px;
+  position: static;
+}
+.card-title {
+  color: var(--neutral-colors-black, #1e1b39);
+  text-align: left;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 36px;
+  line-height: 28px;
+  font-weight: 700;
+  position: absolute;
+  left: 62px;
+  top: 461px;
+}
+.frame-2886 {
+  background: rgba(121, 181, 27, 0.2);
+  border-radius: 20px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  padding: 40px 50px 40px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.predicci-n-de-posibles-brotes {
+  color: rgba(83, 145, 0, 0.9);
+  text-align: left;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+.basado-en-los-patrones-hist-ricos-movimientos-de-ganado-factores-clim-ticos-y-datos-de-vacunaci-n-el-sistema-ha-identificado-las-siguientes-zonas-con-potencial-riesgo-de-brotes {
+  color: rgba(0, 0, 0, 0.9);
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.frame-2887 {
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.frame-2888 {
+  background: #ffffff;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  padding: 15px 20px 15px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.puerto-l-pez-meta {
+  color: #000000;
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+}
+.estado {
+  background: #f8d7da;
+  border-radius: 50px;
+  padding: 4px 10px 4px 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.en-ejecuci-n {
+  color: #6d2027;
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 140%;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.caucasia-antioquia {
+  color: #000000;
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-2889 {
+  background: #ffffff;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  padding: 15px 20px 15px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.arauca-arauca {
+  color: #000000;
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+}
+.frame-2890 {
+  background: #ffffff;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  padding: 15px 20px 15px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.monter-a-c-rdoba {
+  color: #000000;
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+}
+.estado2 {
+  background: #f8f0d7;
+  border-radius: 50px;
+  padding: 4px 10px 4px 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.en-ejecuci-n2 {
+  color: #6b6d20;
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 15px;
+  line-height: 140%;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-2891 {
+  background: #ffffff;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  padding: 15px 20px 15px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.frame-2892 {
+  background: #ffffff;
+  flex-shrink: 0;
+  width: 418px;
+  height: 43px;
+  position: relative;
+  overflow: hidden;
+}
