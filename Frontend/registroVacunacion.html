@@ -1,67 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styleRegVac.css">
-  
-  
-  <style>
-   a,
-   button,
-   input,
-   select,
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   * {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-       border: none;
-       text-decoration: none;
-       background: none;
-   
-       -webkit-font-smoothing: antialiased;
-   }
-   
-   menu, ol, ul {
-       list-style-type: none;
-       margin: 0;
-       padding: 0;
-   }
-   </style>
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styleRegVac.css" />
+  <title>Registro de Vacunación</title>
 </head>
 <body>
   <div class="frame-378">
     <div class="registro-de-vacunaci-n-campa-a-zona-norte">
       <span>
-        <span class="registro-de-vacunaci-n-campa-a-zona-norte-span">
-          Registro de
-        </span>
-        <span class="registro-de-vacunaci-n-campa-a-zona-norte-span2">
-          vacunación
-          <br />
-        </span>
-        <span class="registro-de-vacunaci-n-campa-a-zona-norte-span3">
-          Campaña zona norte
-        </span>
+        <span class="registro-de-vacunaci-n-campa-a-zona-norte-span">Registro de </span>
+        <span class="registro-de-vacunaci-n-campa-a-zona-norte-span2">vacunación<br /></span>
+        <span class="registro-de-vacunaci-n-campa-a-zona-norte-span3">Campaña zona norte</span>
       </span>
     </div>
-    <div class="frame-379">
+
+    <form action="/registrar" method="POST" class="frame-379">
       <div class="email">
         <div class="frame-243">
           <div class="label">Tipo de animal vacunado</div>
         </div>
         <div class="text-field">
-          <div class="inputs">
-            <div class="bovino">Bovino</div>
-          </div>
-          <img class="frame" src="vectores/frame0.svg" />
+          <select name="tipo_animal" required>
+            <option value="">Seleccione</option>
+            <option value="Bovino">Bovino</option>
+            <option value="Porcino">Porcino</option>
+            <option value="Caprino">Caprino</option>
+            <option value="Ovino">Ovino</option>
+          </select>
         </div>
       </div>
       <div class="email">
@@ -69,9 +37,7 @@
           <div class="label">Número de animales vacunados</div>
         </div>
         <div class="text-field2">
-          <div class="inputs">
-            <div class="_40">40</div>
-          </div>
+          <input type="number" name="cantidad" min="1" required />
         </div>
       </div>
       <div class="email">
@@ -79,9 +45,7 @@
           <div class="label">Nombre de la finca</div>
         </div>
         <div class="text-field2">
-          <div class="inputs">
-            <div class="finca-los-rosales">Finca los rosales</div>
-          </div>
+          <input type="text" name="finca" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,}" />
         </div>
       </div>
       <div class="email">
@@ -89,9 +53,7 @@
           <div class="label">Municipio</div>
         </div>
         <div class="text-field2">
-          <div class="inputs">
-            <div class="soledad">Soledad</div>
-          </div>
+          <input type="text" name="municipio" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,}" />
         </div>
       </div>
       <div class="email2">
@@ -99,20 +61,22 @@
           <div class="label">Región</div>
         </div>
         <div class="text-field">
-          <div class="inputs">
-            <div class="caribe">Caribe</div>
-          </div>
-          <img class="frame2" src="vectores/frame1.svg" />
+          <select name="region" required>
+            <option value="">Seleccione</option>
+            <option value="Caribe">Caribe</option>
+            <option value="Andina">Andina</option>
+            <option value="Pacífica">Pacífica</option>
+            <option value="Orinoquía">Orinoquía</option>
+            <option value="Amazonía">Amazonía</option>
+          </select>
         </div>
       </div>
       <div class="button">
         <div class="frame-276">
-          <div class="sign-up">Registrar vacunación</div>
+          <button type="submit" class="sign-up">Registrar vacunación</button>
         </div>
       </div>
-    </div>
-    <img class="frame3" src="vectores/frame2.svg" />
+    </form>
   </div>
-  
 </body>
 </html>

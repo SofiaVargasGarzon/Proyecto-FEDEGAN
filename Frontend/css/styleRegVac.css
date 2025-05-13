@@ -1,27 +1,42 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+}
+menu, ol, ul {
+  list-style: none;
+}
+
+/* CONTENEDOR PRINCIPAL */
 .frame-378,
 .frame-378 * {
   box-sizing: border-box;
 }
 .frame-378 {
   background: #ffffff;
-  padding: 60px 0px 60px 0px;
+  padding: 60px 0;
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items: center;
   justify-content: flex-start;
   align-self: stretch;
-  flex-shrink: 0;
-  height: 964px;
+  height: auto;
   position: relative;
   overflow: hidden;
 }
+
+/* TÍTULO */
 .registro-de-vacunaci-n-campa-a-zona-norte {
   text-align: center;
-  position: relative;
 }
 .registro-de-vacunaci-n-campa-a-zona-norte-span {
-  color: #000000;
+  color: #000;
   font-family: "NunitoSans-Bold", sans-serif;
   font-size: 64px;
   line-height: 41px;
@@ -41,38 +56,32 @@
   line-height: 41px;
   font-weight: 700;
 }
+
+/* FORMULARIO */
 .frame-379 {
   background: #ffffff;
-  padding: 0px 50px 0px 50px;
+  padding: 0 50px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
   width: 868px;
-  position: relative;
   overflow: hidden;
 }
-.email {
+
+/* CADA CAMPO */
+.email, .email2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  align-self: stretch;
-  flex-shrink: 0;
   height: 105px;
-  position: relative;
+  width: 100%;
 }
 .frame-243 {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
   align-items: center;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
+  width: 100%;
+  margin-bottom: 8px;
 }
 .label {
   color: #303030;
@@ -80,132 +89,63 @@
   font-family: "NunitoSans-Regular", sans-serif;
   font-size: 24px;
   font-weight: 400;
-  position: relative;
 }
-.text-field {
-  border-radius: 12px;
-  border-style: solid;
-  border-color: rgba(102, 102, 102, 0.35);
-  border-width: 1px;
-  padding: 15px 24px 15px 24px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-  overflow: hidden;
-}
-.inputs {
-  display: flex;
-  flex-direction: row;
-  gap: 13px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.bovino {
-  color: #000000;
-  text-align: left;
-  font-family: "NunitoSans-Regular", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  position: relative;
-}
-.frame {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  position: relative;
-  overflow: visible;
-}
+
+/* CAMPOS DE ENTRADA Y SELECT */
+.text-field,
 .text-field2 {
   border-radius: 12px;
-  border-style: solid;
-  border-color: rgba(102, 102, 102, 0.35);
-  border-width: 1px;
-  padding: 15px 24px 15px 24px;
+  border: 1px solid rgba(102, 102, 102, 0.35);
+  padding: 15px 24px;
+  width: 100%;
+  height: 56px;
   display: flex;
-  flex-direction: row;
-  gap: 10px;
   align-items: center;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
+  background-color: #fff;
   overflow: hidden;
 }
-._40 {
-  color: #000000;
-  text-align: left;
-  font-family: "NunitoSans-Regular", sans-serif;
+
+/* INPUT Y SELECT INTERNOS */
+.text-field input,
+.text-field select,
+.text-field2 input,
+.text-field2 select {
+  width: 100%;
+  height: 100%;
   font-size: 24px;
-  font-weight: 400;
-  position: relative;
-}
-.finca-los-rosales {
-  color: #000000;
-  text-align: left;
   font-family: "NunitoSans-Regular", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  position: relative;
+  color: #000;
+  border: none;
+  background: transparent;
+  outline: none;
 }
-.soledad {
-  color: #000000;
-  text-align: left;
-  font-family: "NunitoSans-Regular", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  position: relative;
+
+/* FLECHA NATIVA PARA SELECT */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 24px;
+  padding-right: 40px;
 }
-.email2 {
-  padding: 1px 0px 1px 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  align-self: stretch;
-  flex-shrink: 0;
-  height: 105px;
-  position: relative;
-}
-.caribe {
-  color: #000000;
-  text-align: left;
-  font-family: "NunitoSans-Regular", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  position: relative;
-}
-.frame2 {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  position: relative;
-  overflow: visible;
-}
+
+/* BOTÓN */
 .button {
   background: #79b51b;
   border-radius: 32px;
-  align-self: stretch;
-  flex-shrink: 0;
+  width: 100%;
   height: 56px;
-  position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .frame-276 {
   display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: center;
   justify-content: center;
-  position: absolute;
-  left: 50%;
-  translate: -50% -50%;
-  top: 50%;
+  align-items: center;
+  height: 100%;
 }
 .sign-up {
   color: #ffffff;
@@ -213,18 +153,8 @@
   font-family: "NunitoSans-Medium", sans-serif;
   font-size: 24px;
   font-weight: 500;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.frame3 {
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  left: 59px;
-  top: 39px;
-  overflow: visible;
-  aspect-ratio: 1;
+  width: 100%;
+  height: 100%;
+  background: none;
+  cursor: pointer;
 }
