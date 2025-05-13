@@ -1,92 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  
-  
-  <style>
-   a,
-   button,
-   input,
-   select,
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   * {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-       border: none;
-       text-decoration: none;
-       background: none;
-   
-       -webkit-font-smoothing: antialiased;
-   }
-   
-   menu, ol, ul {
-       list-style-type: none;
-       margin: 0;
-       padding: 0;
-   }
-   </style>
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>Iniciar sesión</title>
 </head>
+
 <body>
   <div class="_13">
     <div class="background">
       <img class="image-2" src="images/image-20.png" />
       <div class="rectangle-5"></div>
     </div>
+
     <div class="overlay-sign-in">
       <img class="image-3" src="images/image-30.png" />
       <div class="frame-377">
-        <div class="frame-375">
+        <form action="/login" method="POST" class="frame-375">
+          
           <div class="email">
             <div class="frame-243">
               <div class="label">Correo electrónico</div>
             </div>
             <div class="text-field">
-              <div class="inputs">
-                <div class="_123456">example@gmail.com</div>
-              </div>
+              <input type="email" name="email" placeholder="example@gmail.com" required />
             </div>
           </div>
+
           <div class="email">
             <div class="frame-243">
-              <div class="label">Password</div>
+              <div class="label">Contraseña</div>
             </div>
-            <div class="text-field">
-              <div class="inputs">
-                <div class="_123456">Ingresa tu contraseña</div>
-              </div>
-              <img class="eye-off" src="svg/eye-off0.svg" />
+            <div class="text-field password-field">
+              <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña" required />
+              <img class="eye-toggle" id="togglePassword" src="svg/eye-off0.svg" alt="Ver contraseña" />
             </div>
           </div>
+
+
           <div class="frame-374">
-            <div class="button">
-              <div class="frame-276">
-                <a href="registroVacunacion.html">
-                  <button class="sign-up">Iniciar sesión</button>
-                </a>
-              </div>
-            </div>
-            <div class="frame-373">
-              <div class="have-an-account-login">
-                <div class="already-have-an-ccount-log-in">
-                  ¿Olvidó su contraseña?
-                </div>
-              </div>
-            </div>
+            <div class="frame-374">
+              <button type="submit" class="button sign-up-button">Iniciar sesión</button>
+            </div>            
           </div>
-        </div>
+
+        </form>
       </div>
     </div>
   </div>
-  
+  <script src="./js/scriptLogin.js" defer></script>
+
 </body>
 </html>

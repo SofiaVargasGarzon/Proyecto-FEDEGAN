@@ -1,4 +1,29 @@
-._13,
+.a,
+.button,
+.input,
+.select,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    background: none;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+.menu, ol, ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 ._13 * {
   box-sizing: border-box;
 }
@@ -218,3 +243,56 @@
   text-decoration: underline;
   position: relative;
 }
+.button.sign-up-button {
+  width: 100%;
+  height: 56px;
+  background: #79b51b;
+  border-radius: 32px;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.text-field input {
+  width: 100%;
+  height: 100%;
+  padding: 15px 24px;
+  font-size: 17px;
+  font-family: "NunitoSans-Regular", sans-serif;
+  color: #333;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.text-field input::placeholder {
+  color: rgba(102, 102, 102, 0.6);
+}
+.sign-up-button {
+  width: 100%;
+  height: 100%;
+  background: none;
+  color: white;
+  font-size: 20px;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+.password-field {
+  position: relative;
+}
+
+.eye-toggle {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
