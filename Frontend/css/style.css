@@ -1,0 +1,220 @@
+._13,
+._13 * {
+  box-sizing: border-box;
+}
+._13 {
+  background: #ffffff;
+  padding: 194px 594px 194px 594px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 1117px;
+  position: relative;
+  overflow: hidden;
+}
+.background {
+  flex-shrink: 0;
+  width: 1728px;
+  height: 1117px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+.image-2 {
+  width: 1728px;
+  height: 1117px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  object-fit: cover;
+  aspect-ratio: 1728/1117;
+}
+.rectangle-5 {
+  background: rgba(0, 0, 0, 0.5);
+  width: 1728px;
+  height: 1117px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  backdrop-filter: blur(4px);
+}
+.overlay-sign-in {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 55px 50px 55px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 539px;
+  position: relative;
+  overflow: hidden;
+}
+.image-3 {
+  flex-shrink: 0;
+  width: 234px;
+  height: 149px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 234/149;
+}
+.frame-377 {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-375 {
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 440px;
+  position: relative;
+}
+.email {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-243 {
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 27px;
+  position: relative;
+}
+.label {
+  color: #303030;
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.text-field {
+  border-radius: 12px;
+  border-style: solid;
+  border-color: rgba(102, 102, 102, 0.35);
+  border-width: 1px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: 24px;
+  top: 15px;
+}
+._123456 {
+  color: rgba(102, 102, 102, 0.6);
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  position: relative;
+}
+.eye-off {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 24px;
+  top: 40px;
+  transform: translate(0px, -24px);
+  overflow: visible;
+}
+.frame-374 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.button {
+  background: #79b51b;
+  border-radius: 32px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.frame-276 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+}
+.sign-up {
+  color: #ffffff;
+  text-align: center;
+  font-family: "NunitoSans-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frame-373 {
+  display: flex;
+  flex-direction: row;
+  gap: 205px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  position: relative;
+}
+.have-an-account-login {
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.already-have-an-ccount-log-in {
+  color: #333333;
+  text-align: center;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  position: relative;
+}
