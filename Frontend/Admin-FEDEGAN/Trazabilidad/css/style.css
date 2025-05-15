@@ -74,6 +74,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .frame-11 {
   background: #ffffff;
   padding: 10px;
@@ -87,7 +88,8 @@
   position: relative;
   overflow: hidden;
 }
-.buton-menu {
+
+.buton-menu.active {
   background: rgba(121, 181, 27, 0.5);
   border-radius: 10px;
   border-style: solid;
@@ -95,7 +97,7 @@
   border-width: 1px;
   padding: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
   align-items: center;
   justify-content: center;
@@ -113,7 +115,7 @@
   font-weight: 400;
   position: relative;
 }
-.buton-menu2 {
+.buton-menu {
   background: rgba(121, 181, 27, 0.3);
   border-radius: 10px;
   border-style: solid;
@@ -128,9 +130,15 @@
   flex-shrink: 0;
   width: 373px;
   height: 64px;
+  cursor: pointer;
+  transition: background 0.3s ease;
   position: relative;
-  overflow: hidden;
+
+  &:hover {
+    background: rgba(121, 181, 27, 0.5);
+  }
 }
+
 .trazabilidad-internacional {
   color: #4a6e11;
   text-align: left;
