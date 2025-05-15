@@ -13,6 +13,7 @@
   height: 1117px;
   position: relative;
   overflow-y: auto;
+  overflow-y: scroll;
 }
 .brotes-de-fiebre-aftosa {
   text-align: center;
@@ -172,7 +173,7 @@
   flex-shrink: 0;
   width: 1313px;
   height: 336.01px;
-  position: static;
+  position:absolute;
 }
 .container {
   background: var(--neutral-colors-white, #ffffff);
@@ -361,8 +362,8 @@
   border-style: solid;
   border-color: var(--neutral-colors-500, #e5e5ef);
   border-width: 1px 0 0 0;
-  width: 1267px;
-  height: 0px;
+  width: 20px;
+  height: 2px;
   position: absolute;
   left: 62px;
   top: 513px;
@@ -372,7 +373,8 @@
 .card-info {
   width: 271px;
   height: 28px;
-  position: static;
+  position: absolute;
+  display: flex;
 }
 .card-title {
   color: var(--neutral-colors-black, #1e1b39);
@@ -384,6 +386,7 @@
   position: absolute;
   left: 62px;
   top: 461px;
+  text-align: center;
 }
 .frame-2886 {
   background: rgba(121, 181, 27, 0.2);
@@ -391,17 +394,14 @@
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.2);
   border-width: 1px;
-  padding: 40px 50px 40px 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
+  padding-top: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
   position: relative;
-  overflow: hidden;
+  margin-top: 25%;
 }
+
+
 .predicci-n-de-posibles-brotes {
   color: rgba(83, 145, 0, 0.9);
   text-align: left;
@@ -578,11 +578,11 @@
   position: relative;
   overflow: hidden;
 }
-.frame-2892 {
+/* .frame-2892 
   background: #ffffff;
   flex-shrink: 0;
   width: 418px;
   height: 43px;
   position: relative;
   overflow: hidden;
-}
+}{ */
