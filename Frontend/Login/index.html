@@ -18,14 +18,13 @@
     <div class="overlay-sign-in">
       <img class="image-3" src="images/image-30.png" />
       <div class="frame-377">
-        <form action="/login" method="POST" class="frame-375">
-          
+        <form id="login-form" class="frame-375">
           <div class="email">
             <div class="frame-243">
               <div class="label">Correo electrónico</div>
             </div>
             <div class="text-field">
-              <input type="email" name="email" placeholder="example@gmail.com" required />
+              <input type="email" id="email" name="email" placeholder="usuario@example.com" required />
             </div>
           </div>
 
@@ -33,20 +32,18 @@
             <div class="frame-243">
               <div class="label">Contraseña</div>
             </div>
-            <div class="text-field password-field">
-              <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña" required />
-              <img class="eye-toggle" id="togglePassword" src="svg/eye-off0.svg" alt="Ver contraseña" />
+            <div class="text-field">
+              <input type="password" id="password" name="password" placeholder="Contraseña" required />
             </div>
           </div>
 
-
-          <div class="frame-374">
-            <div class="frame-374">
-              <button type="submit" class="button sign-up-button">Iniciar sesión</button>
-            </div>            
+          <div class="button">
+            <div class="frame-276">
+              <button type="submit" class="sign-up-button">Iniciar sesión</button>
+            </div>
           </div>
-
         </form>
+
       </div>
     </div>
   </div>
