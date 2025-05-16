@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+.usuaris,
+.usuaris * {
+  box-sizing: border-box;
+}
+
+.usuaris {
+  background: #ffffff;
+  padding: 50px 30px 50px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 41px;
+  align-items: center;
+  justify-content: flex-start;
+  height: 1117px;
+  position: relative;
+  overflow: scroll;
+}
+.gesti-n-de-usuarios {
+  text-align: center;
+  font-family: "NunitoSans-Bold", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  position: relative;
+  width: 1203px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+.gesti-n-de-usuarios-span {
+  color: #000000;
+}
+.gesti-n-de-usuarios-span2 {
+  color: #79b51b;
+}
+.frame-2878 {
+  background: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.search {
+  background: var(--var-sds-color-background-default-default, #ffffff);
+  border-radius: var(--var-sds-size-radius-full, 9999px);
+  border-style: solid;
+  border-color: var(--var-sds-color-border-default-default, #d9d9d9);
+  border-width: 1px;
+  padding: var(--var-sds-size-space-300, 12px)
+    var(--var-sds-size-space-400, 16px) var(--var-sds-size-space-300, 12px)
+    var(--var-sds-size-space-400, 16px);
+  display: flex;
+  flex-direction: row;
+  gap: var(--var-sds-size-space-200, 8px);
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 1152px;
+  position: relative;
+  overflow: hidden;
+}
+.value {
+  color: var(--var-sds-color-text-default-tertiary, #b3b3b3);
+  text-align: left;
+  font-family: "NunitoSans-Regular", sans-serif;
+  font-size: var(--var-sds-typography-body-size-medium, 16px);
+  line-height: 100%;
+  font-weight: var(--var-sds-typography-body-font-weight-regular, 400);
+  position: relative;
+  flex: 1;
+}
+.search2 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: visible;
+}
+.frame {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+.frame-379 {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  gap: 26px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 788px;
+  position: relative;
+}
+.vert-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 404px;
+  position: relative;
+}
+.image {
+  border-radius: 12px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 201px;
+  position: relative;
+  object-fit: cover;
+}
+.bottom {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.jhon-gonzales {
+  color: var(--gray-7, #2a282f);
+  text-align: left;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+.juangonzales-gmail-com {
+  color: var(--gray-7, #2a282f);
+  text-align: left;
+  font-family: "NunitoSans-Light", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+  position: relative;
+  align-self: stretch;
+}
+.administrador-fedegan {
+  color: #7e7e7e;
+  text-align: left;
+  font-family: "NunitoSans-ExtraLight", sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.04em;
+  font-weight: 200;
+  position: relative;
+  align-self: stretch;
+}
+.more-horiz {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.oscar-gom-z {
+  color: var(--gray-7, #2a282f);
+  text-align: left;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+._285-oscar-0-gm-gmail-com {
+  color: var(--gray-7, #2a282f);
+  text-align: left;
+  font-family: "NunitoSans-Light", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+  position: relative;
+  align-self: stretch;
+}
+.more-horiz2 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.jessica-moreno {
+  color: var(--gray-7, #2a282f);
+  text-align: left;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+.jessica-moreno-gmail-com {
+  color: var(--gray-7, #2a282f);
+  text-align: left;
+  font-family: "NunitoSans-Light", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+  position: relative;
+  align-self: stretch;
+}
+.more-horiz3 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.carlos-nieto {
+  color: var(--gray-7, #2a282f);
+  text-align: left;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+.monta-o-275-gmail-com {
+  color: var(--gray-7, #2a282f);
+  text-align: left;
+  font-family: "NunitoSans-Light", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+  position: relative;
+  align-self: stretch;
+}
+.vacunador {
+  color: #7e7e7e;
+  text-align: left;
+  font-family: "NunitoSans-ExtraLight", sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.04em;
+  font-weight: 200;
+  position: relative;
+  align-self: stretch;
+}
+.more-horiz4 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.mar-a-angela-cardoso {
+  color: var(--gray-7, #2a282f);
+  text-align: left;
+  font-family: "NunitoSans-SemiBold", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+.mari-ang-cardoso-gmail-com {
+  color: var(--gray-7, #2a282f);
+  text-align: left;
+  font-family: "NunitoSans-Light", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+  position: relative;
+  align-self: stretch;
+}
+.vacunadora {
+  color: #7e7e7e;
+  text-align: left;
+  font-family: "NunitoSans-ExtraLight", sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.04em;
+  font-weight: 200;
+  position: relative;
+  align-self: stretch;
+}
+.more-horiz5 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.more-horiz6 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
