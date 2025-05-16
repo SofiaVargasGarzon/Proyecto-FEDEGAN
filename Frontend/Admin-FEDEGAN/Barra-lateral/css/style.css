@@ -174,3 +174,10 @@ menu, ol, ul {
   padding: 20px;
   overflow-y: auto;
 }
+
+.button6 {
+  text-decoration: none;
+}
+.button6:hover {
+  background: #d2d2d2;
+}
