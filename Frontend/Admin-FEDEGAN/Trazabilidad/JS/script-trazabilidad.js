@@ -462,60 +462,6 @@ function inicializarTrazabilidad() {
     const saludableCount = datosDetalle.filter(d => d.estadoSanitario === 'Saludable').length;
     const parcialCount = datosDetalle.filter(d => d.estadoSanitario === 'Parcial').length;
     
-    // Gráfico de Barras
-    new Chart(document.getElementById('chartBar'), {
-      type: 'bar',
-      data: {
-        labels,
-        datasets: [{
-          label: 'Cantidad movida',
-          backgroundColor: '#79b51b',
-          data: cantidades
-        }]
-      },
-      options: { responsive: true }
-    });
-
-    // ------------------------
-    // Inicializar gráfica de pastel (bovinos vs porcinos)
-    // ------------------------
-    // Contar tipos
-    const bovinoCount = datosDetalle.filter(d => d.tipo === 'bovino').length;
-    const porcinoCount = datosDetalle.filter(d => d.tipo === 'porcino').length;
-    // Crear pie chart
-    new Chart(document.getElementById('chartPie'), {
-      type: 'pie',
-      data: {
-        labels: ['Bovinos', 'Porcinos'],
-        datasets: [{
-          data: [bovinoCount, porcinoCount],
-          backgroundColor: ['#1a5336', '#f0ad4e']
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              boxWidth: 12,
-              padding: 16
-            }
-          },
-          tooltip: {
-            callbacks: {
-              label: context => {
-                const total = bovinoCount + porcinoCount;
-                const value = context.parsed;
-                const pct = ((value / total) * 100).toFixed(1);
-                return `${context.label}: ${pct}% (${value})`;
-              }
-            }
-          }
-        }
-      }
-    });
-    
     // ③ new function to export the table as CSV
     function downloadTableAsExcel() {
       let csv = ''
@@ -534,4 +480,7 @@ function inicializarTrazabilidad() {
       a.click()
       document.body.removeChild(a)
     }
+
+    const exportButton = document.getElementById('downloadExcel')
+    exportButton.addEventListener('click', downloadTableAsExcel)
 }
