@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Lógica para redirigir según el correo
     if (email === "vacunador@example.com") {
-      window.location.href = "/Frontend/Vacunadores/welcomeVac.html";
+      window.location.href = "/Frontend/Vacunadores/Vacunadores.html";
     } else if (email === "admin@example.com") {
-      window.location.href = "/Frontend/Admin/Admin.html"; // Cambia esta ruta según corresponda
+      window.location.href = "/Frontend/Admin-FEDEGAN/Barra-lateral/index.html"; // Cambia esta ruta según corresponda
     } else {
       alert("Correo no reconocido");
     }
