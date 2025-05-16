@@ -1,345 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Trazabilidad/css/style.css">
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FEDEGAN - Módulo de Movilidad de Animales</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Trazabilidad/CSS/style.css">
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-6">
+    <div class="mb-6">
+      <h1 class="text-3xl font-bold fedegan-primary">Movilidad de Animales</h1>
+      <p class="text-gray-600">Monitoreo y análisis de movimientos de ganado bovino y porcino en territorio colombiano</p>
+      <div class="h-1 w-32 fedegan-primary-bg mt-2"></div>
+    </div>
     
+    <!-- Filtros -->
+    <div class="card p-4 mb-6">
+      <h2 class="text-xl font-semibold mb-4 fedegan-primary">Filtros</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Animal</label>
+          <select id="animalType" class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+            <option value="todos">Todos</option>
+            <option value="bovino">Bovino</option>
+            <option value="porcino">Porcino</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Región</label>
+          <select id="region" class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+            <option value="todas">Todas</option>
+            <option value="andina">Andina</option>
+            <option value="caribe">Caribe</option>
+            <option value="pacifica">Pacífica</option>
+            <option value="orinoquia">Orinoquía</option>
+            <option value="amazonia">Amazonía</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Desde</label>
+          <input type="date" id="dateFrom" class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Hasta</label>
+          <input type="date" id="dateTo" class="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+      </div>
+      <div class="mt-4 text-right">
+        <button id="resetFilters" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 mr-2">
+          <i class="fas fa-times mr-1"></i> Limpiar
+        </button>
+        <button id="applyFilters" class="px-4 py-2 fedegan-primary-bg text-white rounded-md hover:bg-green-700">
+          <i class="fas fa-search mr-1"></i> Aplicar Filtros
+        </button>
+      </div>
+    </div>
     
-    <style>
-    a,
-    button,
-    input,
-    select,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        border: none;
-        text-decoration: none;
-        background: none;
+    <!-- Mapa Interactivo -->
+    <div class="card p-4 mb-6 relative">
+      <h2 class="text-xl font-semibold mb-4 fedegan-primary">Mapa de Movilidad</h2>
+      <div id="mapContainer" class="relative">
+        <div id="map"></div>
+        <div id="mapLoading" class="loading-overlay">
+          <div class="spinner"></div>
+        </div>
+      </div>
+      <div class="mt-3 text-sm text-gray-500">
+        <span class="inline-flex items-center mr-4">
+          <span class="w-3 h-3 rounded-full bg-blue-500 mr-1"></span> Origen
+        </span>
+        <span class="inline-flex items-center mr-4">
+          <span class="w-3 h-3 rounded-full bg-red-500 mr-1"></span> Destino
+        </span>
+        <span class="inline-flex items-center">
+          <span class="w-8 h-1 bg-green-500 mr-1"></span> Ruta de movimiento
+        </span>
+      </div>
+    </div>
+
+    <div id="detalleMovimiento" class="card p-4 mb-6 hidden">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold fedegan-primary">Detalle de Movimiento</h2>
+        <button id="cerrarDetalle" class="text-gray-500 hover:text-gray-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h3 class="text-lg font-medium mb-2">Información de Origen</h3>
+          <div class="bg-gray-50 p-3 rounded-md">
+            <p><strong>Finca:</strong> <span id="fincaOrigen">--</span></p>
+            <p><strong>Municipio:</strong> <span id="municipioOrigen">--</span></p>
+            <p><strong>Región:</strong> <span id="regionOrigen">--</span></p>
+            <p><strong>Fecha de Salida:</strong> <span id="fechaSalida">--</span></p>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-2">Información de Destino</h3>
+          <div class="bg-gray-50 p-3 rounded-md">
+            <p><strong>Finca:</strong> <span id="fincaDestino">--</span></p>
+            <p><strong>Municipio:</strong> <span id="municipioDestino">--</span></p>
+            <p><strong>Región:</strong> <span id="regionDestino">--</span></p>
+            <p><strong>Fecha de Llegada:</strong> <span id="fechaLlegada">--</span></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-4 border-t pt-4">
+        <h3 class="text-lg font-medium mb-2">Detalles del Movimiento</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-gray-50 p-3 rounded-md">
+            <p><strong>Tipo de Animal:</strong> <span id="tipoAnimal">--</span></p>
+            <p><strong>Cantidad:</strong> <span id="cantidadAnimales">--</span></p>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md">
+            <p><strong>Estado Sanitario:</strong> <span id="estadoSanitario">--</span></p>
+            <p><strong>Vacunación:</strong> <span id="estadoVacunacion">--</span></p>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md">
+            <p><strong>Responsable:</strong> <span id="responsableMovimiento">--</span></p>
+            <p><strong>Guía Sanitaria:</strong> <span id="guiaSanitaria">--</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
     
-        -webkit-font-smoothing: antialiased;
-    }
+    <!-- Panel de Estadísticas -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div class="card p-4 stat-card" style="border-left-color: #79b51b;">
+        <div class="flex justify-between">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-700">Movimientos Totales</h3>
+            <p class="text-3xl font-bold fedegan-primary mt-2" id="totalMovimientos">--</p>
+          </div>
+          <div class="rounded-full p-3 fedegan-primary-bg bg-opacity-20 h-12 w-12 flex items-center justify-center">
+            <i class="fas fa-route text-xl fedegan-primary"></i>
+          </div>
+        </div>
+        <div class="mt-2 text-sm text-gray-500">
+          <span id="periodoMovimientos">Periodo: --</span>
+        </div>
+      </div>
+      
+      <div class="card p-4 stat-card relative" style="border-left-color: #e53e3e;">
+        <div class="flex justify-between">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-700">Alertas de Brotes</h3>
+            <p class="text-3xl font-bold text-red-600 mt-2" id="totalAlertas">--</p>
+          </div>
+          <div class="rounded-full p-3 bg-red-100 h-12 w-12 flex items-center justify-center relative">
+            <i class="fas fa-exclamation-triangle text-xl text-red-600"></i>
+            <span class="alert-badge" id="alertasBadge">3</span>
+          </div>
+        </div>
+        <div class="mt-2 text-sm text-gray-500">
+          <span id="ultimaAlerta">Última alerta: --</span>
+        </div>
+      </div>
+      
+      <div class="card p-4 stat-card" style="border-left-color: #f0ad4e;">
+        <div class="flex justify-between">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-700">Estado Vacunación</h3>
+            <p class="text-3xl font-bold fedegan-secondary mt-2" id="porcentajeVacunacion">--</p>
+          </div>
+          <div class="rounded-full p-3 bg-yellow-100 h-12 w-12 flex items-center justify-center">
+            <i class="fas fa-syringe text-xl fedegan-secondary"></i>
+          </div>
+        </div>
+        <div class="mt-2 text-sm text-gray-500">
+          <span id="totalVacunados">Animales vacunados: --</span>
+        </div>
+      </div>
+    </div>
     
-    menu, ol, ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    </style>
-    
-    <title>Document</title>
-  </head>
-<body>
-  <section class="interfaz-administrador-fedegan">
-    <main class="frame-378">
+    <!-- ============================
+         NUEVA SECCIÓN: Movimientos Detallados
+         ============================ -->
+    <div class="card p-4 mb-6">
+      <h2 class="text-xl font-semibold mb-4 fedegan-primary">Movimientos Detallados</h2>
 
-      <section class="frame-384">
+      <!-- Tabla de Movimientos -->
+      <div class="overflow-x-auto mb-4">
+        <!-- ① added id="movimientosTable" -->
+        <table id="movimientosTable" class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Fecha</th>
+              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Tipo</th>
+              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Finca Origen</th>
+              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Municipio Origen</th>
+              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Finca Destino</th>
+              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Municipio Destino</th>
+              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Cantidad</th>
+              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Estado Sanitario</th>
+            </tr>
+          </thead>
+          <tbody id="tablaMovimientos" class="bg-white divide-y divide-gray-200">
+            <!-- filas generadas por JS -->
+          </tbody>
+        </table>
+      </div>
 
-        <section class="frame-11">
-          <div class="buton-menu active" data-target="contenido-nacional">
-            <div class="dashboard">Trazabilidad Nacional</div>
-          </div>
+      <!-- ② new download button -->
+      <div class="mb-4">
+        <button
+          onclick="downloadTableAsExcel()"
+          class="px-4 py-2 fedegan-primary-bg text-white rounded-md hover:bg-green-700"
+        >
+          <i class="fas fa-download mr-1"></i> Descargar Excel
+        </button>
+      </div>
+    </div>
+  </div>
 
-          <div class="buton-menu" data-target="contenido-internacional">
-            <div class="trazabilidad-internacional">
-              Trazabilidad Internacional
-            </div>
-            <div class="datos-del-ministerio-de-agricultura">
-              Datos del Ministerio de Agricultura
-            </div>
-          </div>
-        </section>
-        <section class="contenido-nacional">
-          <section class="frame-2878">
-            <div class="search">
-              <div class="value">
-                Buscar por ID de animal / Finca / Municipio / Fecha / Campaña
-              </div>
-              <img class="search2" src="../Trazabilidad/svg/search1.svg" />
-            </div>
-            <img class="frame" src="../Trazabilidad/svg/frame0.svg" />
-          </section>
-  
-          <section class="frame-5">
-            <div class="column">
-              <div class="header">
-                <div class="header2">ID Animal</div>
-              </div>
-              <div class="cell">
-                <div class="text">000123</div>
-              </div>
-              <div class="cell">
-                <div class="text">000456</div>
-              </div>
-              <div class="cell">
-                <div class="text">000789</div>
-              </div>
-              <div class="cell2">
-                <div class="text">000321</div>
-              </div>
-            </div>
-            <div class="column2">
-              <div class="header3">
-                <div class="header2">Tipo de animal</div>
-              </div>
-              <div class="cell">
-                <div class="text">Bovino</div>
-              </div>
-              <div class="cell">
-                <div class="text">Porcino</div>
-              </div>
-              <div class="cell">
-                <div class="text">Bovino</div>
-              </div>
-              <div class="cell3">
-                <div class="text">Bovino</div>
-              </div>
-            </div>
-            <div class="column3">
-              <div class="header3">
-                <div class="header2">Finca Origen</div>
-              </div>
-              <div class="cell4">
-                <div class="text">El Encanto</div>
-              </div>
-              <div class="cell4">
-                <div class="text">La Arboleda</div>
-              </div>
-              <div class="cell4">
-                <div class="text">Santa María</div>
-              </div>
-              <div class="cell5">
-                <div class="text">El Roble</div>
-              </div>
-            </div>
-            <div class="column4">
-              <div class="header3">
-                <div class="header2">Finca Destino</div>
-              </div>
-              <div class="cell6">
-                <div class="_1-200-000-00">San Pedro</div>
-              </div>
-              <div class="cell6">
-                <div class="_1-200-000-00">La Alameda</div>
-              </div>
-              <div class="cell6">
-                <div class="_1-200-000-00">Los Alpes</div>
-              </div>
-              <div class="cell7">
-                <div class="_1-200-000-00">Hacienda Nueva</div>
-              </div>
-            </div>
-            <div class="column5">
-              <div class="header4">
-                <div class="header2">Fecha</div>
-              </div>
-              <div class="cell4">
-                <div class="input">
-                  <div class="text2">06 / 01 / 2025</div>
-                </div>
-              </div>
-              <div class="cell4">
-                <div class="input">
-                  <div class="text2">08 / 04 / 2025</div>
-                </div>
-              </div>
-              <div class="cell4">
-                <div class="input">
-                  <div class="text2">10 / 05 / 2025</div>
-                </div>
-              </div>
-              <div class="cell5">
-                <div class="input">
-                  <div class="text2">02 / 15 / 2025</div>
-                </div>
-              </div>
-            </div>
-            <div class="column6">
-              <div class="header5">
-                <div class="header2">Estado Sanitario</div>
-              </div>
-              <div class="cell8">
-                <div class="estado">
-                  <div class="en-ejecuci-n">Vacuando</div>
-                </div>
-              </div>
-              <div class="cell8">
-                <div class="estado">
-                  <div class="en-ejecuci-n">Vacunado</div>
-                </div>
-              </div>
-              <div class="cell8">
-                <div class="estado">
-                  <div class="en-ejecuci-n">Vacuando</div>
-                </div>
-              </div>
-              <div class="cell9">
-                <div class="estado">
-                  <div class="en-ejecuci-n">Vacunado</div>
-                </div>
-              </div>
-            </div>
-          </section>
-  
-          <section class="frame-2880">
-            <div class="button-add">
-              <div class="exportar-datos-a-pdf">Exportar datos a PDF</div>
-              <img class="frame2" src="../Trazabilidad/svg/frame1.svg" />
-            </div>
-          </section>
-        </section>
-        <section class="contenido-internacional" style="display: none;">
-          <div class="frame-2878">
-            <div class="search">
-              <div class="value">
-                Buscar por ID de animal / Finca / Municipio / Fecha / Campaña
-              </div>
-              <img class="search2" src="../Trazabilidad/svg/search1.svg" />
-            </div>
-            <img class="frame" src="../Trazabilidad/svg/frame0.svg" />
-          </div>
-
-          <div class="frame-5">
-            <div class="column">
-              <div class="header">
-                <div class="header2">ID Animal</div>
-              </div>
-              <div class="cell">
-                <div class="text">000123</div>
-              </div>
-              <div class="cell">
-                <div class="text">000456</div>
-              </div>
-              <div class="cell">
-                <div class="text">000789</div>
-              </div>
-              <div class="cell2">
-                <div class="text">000321</div>
-              </div>
-            </div>
-            <div class="column2">
-              <div class="header3">
-                <div class="header2">Tipo de animal</div>
-              </div>
-              <div class="cell">
-                <div class="text">Bovino</div>
-              </div>
-              <div class="cell">
-                <div class="text">Porcino</div>
-              </div>
-              <div class="cell">
-                <div class="text">Bovino</div>
-              </div>
-              <div class="cell3">
-                <div class="text">Bovino</div>
-              </div>
-            </div>
-            <div class="column3">
-              <div class="header3">
-                <div class="header2">Finca Origen</div>
-              </div>
-              <div class="cell4">
-                <div class="text">El Encanto</div>
-              </div>
-              <div class="cell4">
-                <div class="text">La Arboleda</div>
-              </div>
-              <div class="cell4">
-                <div class="text">Santa María</div>
-              </div>
-              <div class="cell5">
-                <div class="text">El Roble</div>
-              </div>
-            </div>
-            <div class="column4">
-              <div class="header3">
-                <div class="header2">País Destino</div>
-              </div>
-              <div class="cell6">
-                <div class="_1-200-000-00">Perú</div>
-              </div>
-              <div class="cell6">
-                <div class="_1-200-000-00">Bolivia</div>
-              </div>
-              <div class="cell6">
-                <div class="_1-200-000-00">Perú</div>
-              </div>
-              <div class="cell7">
-                <div class="_1-200-000-00">Argentina</div>
-              </div>
-            </div>
-            <div class="column5">
-              <div class="header4">
-                <div class="header2">Fecha</div>
-              </div>
-              <div class="cell4">
-                <div class="input">
-                  <div class="text2">06 / 01 / 2025</div>
-                </div>
-              </div>
-              <div class="cell4">
-                <div class="input">
-                  <div class="text2">08 / 04 / 2025</div>
-                </div>
-              </div>
-              <div class="cell4">
-                <div class="input">
-                  <div class="text2">10 / 05 / 2025</div>
-                </div>
-              </div>
-              <div class="cell5">
-                <div class="input">
-                  <div class="text2">02 / 15 / 2025</div>
-                </div>
-              </div>
-            </div>
-            <div class="column6">
-              <div class="header5">
-                <div class="header2">Estado Sanitario</div>
-              </div>
-              <div class="cell8">
-                <div class="estado">
-                  <div class="en-ejecuci-n">Vacuando</div>
-                </div>
-              </div>
-              <div class="cell8">
-                <div class="estado">
-                  <div class="en-ejecuci-n">Vacunado</div>
-                </div>
-              </div>
-              <div class="cell8">
-                <div class="estado">
-                  <div class="en-ejecuci-n">Vacuando</div>
-                </div>
-              </div>
-              <div class="cell9">
-                <div class="estado">
-                  <div class="en-ejecuci-n">Vacunado</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="frame-2880">
-            <div class="button-add">
-              <div class="exportar-datos-a-pdf">Exportar datos a PDF</div>
-              <img class="frame2" src="../Trazabilidad/svg/frame1.svg" />
-            </div>
-          </div>
-        </section>
-
-      </section>
-
-    </main>
-  </section>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="../Trazabilidad/JS/script-trazabilidad.js"></script>
 </body>
 </html>
