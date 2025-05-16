@@ -26,28 +26,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.text();
             })
             .then(html => {
-                // Crear un contenedor temporal para extraer scripts
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = html;
 
-                // Extraer y ejecutar los scripts antes de insertar el HTML
                 const scripts = tempDiv.querySelectorAll('script');
+                content.innerHTML = tempDiv.innerHTML;
 
                 scripts.forEach(script => {
+                    if (!script.src) return;
+
                     const newScript = document.createElement('script');
-                    if (script.src) {
-                        newScript.src = script.src;
-                        newScript.async = false;
-                    } else {
-                        newScript.textContent = script.textContent;
-                    }
+                    newScript.src = script.src;
+                    newScript.async = false;
                     document.head.appendChild(newScript);
-                    script.remove(); // quitar el script del HTML para no duplicarlo
                 });
 
-                // Insertar el contenido HTML sin los scripts
-                content.innerHTML = tempDiv.innerHTML;
+                // Esperar a que el contenido esté en el DOM
+                setTimeout(() => {
+                    if (ruta.includes('trazabilidad')) {
+                        if (typeof inicializarTrazabilidad === 'function') {
+                            inicializarTrazabilidad();
+                        } else {
+                            console.warn('No se encontró la función inicializarTrazabilidad');
+                        }
+                    }
+                }, 50);
             })
+
             .catch(error => {
                 console.error('Error cargando archivo:', error);
                 content.innerHTML = `<p>Error al cargar la vista: ${error.message}</p>`;
