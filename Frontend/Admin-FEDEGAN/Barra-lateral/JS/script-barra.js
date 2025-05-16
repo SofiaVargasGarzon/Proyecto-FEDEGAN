@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             console.warn('No se encontró la función inicializarTrazabilidad');
                         }
                     }
-                }, 50);
+                }, 1000);
             })
 
             .catch(error => {
