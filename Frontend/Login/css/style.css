@@ -1,3 +1,11 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .a,
 .button,
 .input,
@@ -29,40 +37,36 @@
 }
 ._13 {
   background: #ffffff;
-  padding: 194px 594px 194px 594px;
   display: flex;
   flex-direction: row;
-  gap: 10px;
   align-items: center;
   justify-content: center;
-  align-self: stretch;
-  flex-shrink: 0;
-  height: 1117px;
+  width: 100vw;
+  height: 100vh;
   position: relative;
   overflow: hidden;
+  padding: 0; /* Eliminar el padding que estaba causando problemas */
 }
 .background {
-  flex-shrink: 0;
-  width: 1728px;
-  height: 1117px;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   overflow: hidden;
 }
 .image-2 {
-  width: 1728px;
-  height: 1117px;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  left: 0px;
-  top: 0px;
-  object-fit: cover;
-  aspect-ratio: 1728/1117;
+  left: 0;
+  top: 0;
+  object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio */
 }
 .rectangle-5 {
   background: rgba(0, 0, 0, 0.5);
-  width: 1728px;
-  height: 1117px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -81,6 +85,7 @@
   width: 539px;
   position: relative;
   overflow: hidden;
+  z-index: 10;
 }
 .image-3 {
   flex-shrink: 0;
